@@ -10,4 +10,4 @@ function invertString (param){
   console.log(result)
 }
 
-invertString('Lógic Test')
+invertString('Logic Test')
