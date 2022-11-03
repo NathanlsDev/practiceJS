@@ -1,5 +1,4 @@
 const result = fizzBuzz(15)
-console.log(result)
 
 function fizzBuzz(input){
   if  (typeof input !== "number"){
@@ -16,3 +15,5 @@ function fizzBuzz(input){
   } 
   return (input);
 }
+
+console.log(result)
