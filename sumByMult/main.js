@@ -7,7 +7,7 @@ function sumByMult (num){
     }
   }
 
-  const total = filtered.reduce((prev, next) => prev + next)
+  const total = filtered.reduce((prev, current) => prev + current)
   console.log(total)
 }
 
