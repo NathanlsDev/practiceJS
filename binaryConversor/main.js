@@ -22,16 +22,34 @@ Exemplo: A primeira coluna da lista tem como dígito predominante o número 1, s
 Desenvolva um algoritmo que receba um array de valores binários (como o exemplo acima) e retorne a representação decimal da senha.
  */
 
-const binaryArr = [
-  ["0110100000"],
-  ["1001011111"],
-  ["1110001010"],
-  ["0111010101"],
-  ["0011100110"],
-  ["1010011001"],
-  ["1101100100"],
-  ["1011010100"],
-  ["1001100111"],
-  ["1000011000"],
+const list = [
+  "0110100000",
+  "1001011111",
+  "1110001010",
+  "0111010101",
+  "0011100110",
+  "1010011001",
+  "1101100100",
+  "1011010100",
+  "1001100111",
+  "1000011000",
 ];
 
+const decryptPassword = (list) => {
+  let password = 0;
+
+  for (let i = 0; i < 10; i++) {
+    let column = 0;
+
+    for (let j = 0; j < list.length; j++) {
+      column += parseInt(list[j][i]);
+    }
+
+    const mostCommonDigit = column >= list.length / 2 ? 1 : 0;
+    password = password * 2 + mostCommonDigit;
+  }
+
+  return password;
+};
+
+console.log(decryptPassword(list));
