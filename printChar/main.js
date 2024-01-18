@@ -1,21 +1,24 @@
-const printer = (lines) => {
+const printer = (lines) => {  
   if (Number.isNaN(Number(lines))) {
     throw new Error("Invalid input");
   }
-  
-  const isANaturalNumber = lines >= 0 && Number.isInteger(lines);
 
-  if (isANaturalNumber) {
-    let line = "";
-    for (i = 0; i < lines; i++) {
-      line += " * |";
-      console.log(line);
-    }
-    return;
+  const isANaturalNumber = lines >= 0 && Number.isInteger(lines);  
+  if (!isANaturalNumber) {
+    return console.log(
+      `The number needs to be an integer, and greater than or equal to 0`
+    );
   }
-  return console.log(`The number needs to be an integer, and greater than or equal to 0`)
+
+  let line = "";
+  for (i = 0; i < lines; i++) {
+    line += " * |";
+    console.log(line);
+  }
+  return;
 };
 printer(5);
+
 
 const draw = (n) => {
   if ((!n && n !== 0) || Number.isNaN(Number(n)) || !Number.isInteger(n)) {
